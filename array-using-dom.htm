@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <p id="element"></p>
+  </body>
+  <script>
+    const arr = [1, 2, , 34, 5];
+    arr.forEach((element) => {
+      document
+        .getElementById("element")
+        .appendChild(document.createTextNode(element));
+    });
+  </script>
+</html>
