@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> </title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div>
+      <h1 class="list" , style="margin: 5px">My To Do List</h1>
+      <form action="" id="form" onsubmit="newelement(event)">
+        <input type="text" placeholder="Task...." id="input" />
+        <button type="submit" class="list">Add Task</button>
+ 
+        </button>
+      </form>
+    </div>
+    <ul id="Todolist">
+      
+    </ul>
+    <script>
+
+ const close = document.getElementsByClassName("close");
+consti;
+ 
+      function newelement(e) {
+        e.preventDefault();
+
+        const li = document.createElement("li");
+        const inputvalue = document.getElementById("input").value;
+        const k = document.createTextNode(inputvalue);
+        const btn = document.createElement('button'); 
+        btn.innerText = "x"
+        btn.className="close"
+        li.appendChild(k);
+        li.appendChild(btn);
+        if (inputvalue === "") {
+          alert("you must write something");
+        } else {
+          document.getElementById("Todolist").appendChild(li);
+        }
+        
+ 
+        for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      console.log(this.parentElement)
+      const div = this.parentElement;
+      div.style.display = "none";
+    }
+      }
+
+
+}
+       
+     </script>
+  </body>
+</html>
