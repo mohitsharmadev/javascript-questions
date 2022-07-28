@@ -1,0 +1,10 @@
+body {
+  background-size: cover;
+  colour: white;
+  font-family: "antaic sc", cursive;
+  backgroundcolour: rgb(95, 202, 195);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

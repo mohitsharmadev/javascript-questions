@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     
   </head>
   <body>
     <h1>Rock, Paper, Scissors</h1>
@@ -27,15 +26,15 @@
       const buttons = document.querySelectorAll("button");
       const winnerScores = [0, 0];
 
-       for (let i = 0; i < buttons.length; i++) {
+      for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", playGame);
       }
 
       function playGame(e) {
-         let playerSelection = e.target.innerText;
-         let computerSelection = Math.random();
+        let playerSelection = e.target.innerText;
+        let computerSelection = Math.random();
 
-         if (computerSelection < 0.34) {
+        if (computerSelection < 0.34) {
           computerSelection = "Rock";
         } else if (computerSelection <= 0.64) {
           computerSelection = "Paper";
@@ -43,11 +42,11 @@
           computerSelection = "Scissors";
         }
 
-         let result = checkWinner(playerSelection, computerSelection);
+        let result = checkWinner(playerSelection, computerSelection);
 
-         if (result === "Player") {
+        if (result === "Player") {
           result += " wins!";
-           winnerScores[0]++;
+          winnerScores[0]++;
         }
 
         if (result === "Computer") {
@@ -56,17 +55,17 @@
         }
 
         if (result === "Draw") {
-          result += ". It's a tie!";
+          result += " It's a tie!";
         }
 
-         score.innerHTML =
+        score.innerHTML =
           "Player: [ " +
           winnerScores[0] +
           " ] Computer: [ " +
           winnerScores[1] +
           " ]";
 
-         messenger(
+        messenger(
           "Player: <strong>" +
             playerSelection +
             "</strong> Computer: <strong>" +
@@ -111,4 +110,4 @@
       }
     </script>
   </body>
-</html
+</html>
