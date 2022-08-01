@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Javascript form valildation</title>
+  </head>
+  <body>
+    <h1>Form validation in javascript</h1>
+    <form id="formation">
+      <div class="validation">
+        <label id="colour">Name</label>
+        <input type="text" name="Name" id="name" autocomplete="off" />
+      </div>
+
+      <div class="ema">
+        <label id="na">Email</label>
+        <input type="text" name="email" id="email" autocomplete="off" />
+      </div>
+
+      <div class="user">
+        <label id="p">Username</label>
+        <input type="text" name="username" id="username" autocomplete="off" />
+      </div>
+
+      <div class="pass">
+        <label id="ui">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="confirm">
+        <label id="li">confirm password</label>
+        <input
+          type="password"
+          name="confirm password"
+          id="confirm"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="mobile">
+        <label for="" id="mo">Mobile Number</label>
+        <input
+          type="number"
+          name="mobile number"
+          id="mobilenum"
+          autocomplete="off"
+        />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      const form = document.getElementById("formation");
+      form.addEventListener("submit", validation);
+
+      function validation(e) {
+        e.preventDefault();
+        console.log("event called");
+        let Name = document.getElementById("name").value;
+        let Email = document.getElementById("email").value;
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+        let confirmpassword = document.getElementById("confirm").value;
+        let mobile = document.getElementById("mobilenum").value;
+        function conditions() {
+          if (Name === "") {
+            alert("Name should not be empty");
+            return false;
+          }
+          if (Email === "") {
+            alert("Email should not be empty");
+            return false;
+          }
+          if (username === "") {
+            alert("username should not be empty");
+            return false;
+          }
+          if (password === "") {
+            alert("password should not be empty");
+            return false;
+          }
+          if (confirmpassword === "") {
+            alert("confirm password should not be empty");
+            return false;
+          }
+          if (mobile === "") {
+            alert("mobilenumber should not be empty");
+            return false;
+          }
+          if (
+            /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+              Email
+            ) === false
+          ) {
+            alert("Invalid email  ");
+            return false;
+          }
+          if (username.length <= 7 || username.length >= 18) {
+            alert("username must be write between 7 to 18 character");
+            return false;
+          }
+          if (password.length <= 7 || password.length >= 20) {
+            alert("you must be write between 7 to 20  ");
+            return false;
+          }
+          if (confirmpassword !== password) {
+            alert("your confirm password does not match");
+            return false;
+          }
+          if (mobile.length !== 10) {
+            alert("your number is not ten digits");
+            return false;
+          }
+
+          return true;
+        }
+        if (conditions()) {
+          form.Submit;
+        }
+      }
+    </script>
+  </body>
+</html>
