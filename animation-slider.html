@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title> </title>
+  </head>
+  <style>
+    #box {
+      margin: auto;
+      width: 60%;
+      height: 2rem;
+      background-color: cadetblue;
+    }
+    #full {
+      background-color: coral;
+      width: 0;
+      height: 2rem;
+    }
+  </style>
+  <body>
+    <div id="box">
+      <div id="full"></div>
+    </div>
+    <button onclick="button()" id="mybtn">click me</button>
+    <script>
+      function button() {
+        let element = document.getElementById("full");
+        let width = 0;
+        element.style.width = width + "%";
+        let txt = document.getElementById("box");
+
+        const interval = setInterval(form, 10);
+
+        function form() {
+          element.style.width = width + "%";
+
+          width++;
+          if (width > 100) {
+            console.log("stoping");
+            clearInterval(interval);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

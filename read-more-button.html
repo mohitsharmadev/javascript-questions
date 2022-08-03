@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>read-more-button</title>
+  </head>
+  <body>
+    <h1>read the content</h1>
+    <p1 id="animation"
+      >Sports Content means sports scores, statistics, game summaries, wire
+      reports, news, editorial, photographs, video and audio files, fantasy
+      sports games, and other sports-related information and services of a
+      similar nature, whether in text, multimedia, or any other format,
+      published on the SportsLine Web Site.Sports Content specifically includes
+      content licensed to with right of further sublicense. Sports Content
+      specifically excludes content from third party Web sites operated by or
+      affiliated with SportsLine which SportsLine does not have the right to
+      license or sublicense to third parties .
+    </p1>
+
+    <button onclick="slider()" id="buttxt">Read More</button>
+
+    <script>
+      let toggle = true;
+      let com = document.getElementById("animation");
+      let butt = document.getElementById("buttxt");
+      let text = com.innerText;
+      function slider() {
+        let shortenText = text.substring(0, 200);
+
+        if (toggle) {
+          com.innerText = shortenText;
+          butt.innerText = "Read More";
+          toggle = false;
+        } else {
+          com.innerText = text;
+          butt.innerText = "Read Less";
+          toggle = true;
+        }
+      }
+    </script>
+  </body>
+</html>
