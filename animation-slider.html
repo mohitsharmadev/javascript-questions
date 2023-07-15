@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>Animated slider</title>
+  </head>
+  <style>
+    #box {
+      margin: auto;
+      width: 60%;
+      height: 2rem;
+      background-color: rgb(196, 207, 207);
+    }
+    #full {
+      background-color: rgb(198, 99, 66);
+      width: 0;
+      height: 2rem;
+      text-align: center;
+    }
+    #reused {
+      color: white;
+    }
+  </style>
+  <body>
+    <div id="box">
+      <div id="full">
+        <p id="reused"></p>
+      </div>
+    </div>
+    <button onclick="button()" id="mybtn">click me</button>
+    <script>
+      function button() {
+        let element = document.getElementById("full");
+        let width = 0;
+        element.style.width = width + "%";
+        let txt = document.getElementById("box");
+        let set = document.getElementById("reused");
+
+        const interval = setInterval(form, 250);
+
+        function form() {
+          element.style.width = width + "%";
+          set.textContent = width + "%";
+          width++;
+          if (width > 100) {
+            console.log("stoping");
+            clearInterval(interval);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

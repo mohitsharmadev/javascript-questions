@@ -1,0 +1,36 @@
+div {
+  background-color: #f1cdbd;
+}
+
+.list {
+  text-align: center;
+}
+
+#form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #f1cdbd;
+  padding: 30px 40px;
+  color: rgb(207, 205, 205);
+  text-align: center;
+}
+input {
+  width: 75%;
+  padding: 10px;
+  float: right;
+  font-size: 16px;
+}
+button {
+  width: 10%;
+}
+ul li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+  background-color: antiquewhite;
+  padding: 12px 8px 12px 40px;
+}
+ul {
+  margin: 0;
+}
